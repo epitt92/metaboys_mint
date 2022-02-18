@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "Kiona";
+  src: url("./assets/font/Kiona-Bold.ttf");
+}
+
+@font-face {
+  font-family: "HeadingNow-94Regular";
+  src: url("./assets/font/HEADINGNOW-94REGULAR.OTF");
+}
+@font-face {
+  font-family: "e-Ukraine"; 
+  src: url("./assets/font/E-UKRAINEHEAD-LIGHT.OTF"); 
+}
+@font-face {
+  font-family: "SK Concretica"; 
+  src: url("./assets/font/SKCONCRETICA-REGULARTRIAL.TTF"); 
+}
+*{
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  margin: 0!important;
+}
+body{
+ background-color: #2E2E2E;
+}
+#main-white{
+  font-size: 25px;
+}
+iframe{
+  z-index: -1!important;
+}
+
+.p-title{
+  font-weight: bold;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+.p-background{
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 150%;
+}
+.top-header ~ img{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.s-background {
+  background-image: url("./assets/img/mint_page_background.jpg");
+  background-position: top;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+#root > div{
+  overflow: hidden;
+}
+.p-connect img{
+  margin-left: 20px;
+}
+.login-box .user-box input{
+  font-family: "e-Ukraine";
+}
+@media screen and (max-width: 1200px){
+.p-background{
+  object-fit: cover !important;
+  height: 100% !important;
+}
+.s-background {
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.login-box {
+  width: 60% !important;
+}
+.login-box form button {
+  margin-top: 10px !important;
+}
+.subscribe{
+  font-size: 18px !important;
+}
+}
+@media screen and (max-width: 800px){
+.p-background{
+  object-fit: cover !important;
+  height: 100% !important;
+}
+.p-title{
+  font-size: 30px !important;
+}
+
+.login-box form button {
+  font-size: 20px !important; 
+} 
+#main-white{
+  font-size: 23px !important;
+}
+.login-box {
+  width: 80% !important;
+}
+.login-box form button {
+  margin-top: 10px !important;
+}
+.subscribe{
+  font-size: 15px !important;
+}
+}
+
+.login-box form button {
+  font-size: 20px !important; 
+} 
+@media screen and (max-width: 500px){
+  .subscribe{
+    font-size: 13px !important;
+  }
+  .p-background{
+    object-fit: cover !important;
+    /*height: 100% !important;*/
+  }
+  .s-background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .p-title{
+    font-size: 25px !important;
+  }
+  .login-box form button {
+
+    font-size: 15px !important; 
+  } 
+  #main-white{
+    font-size: 15px !important; 
+  }
+  .login-box {
+    width: 92% !important;
+  }
+  .login-box form button {
+    margin-top: 10px !important;
+  }
+}
+.toast.show{
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: hideAnimation .4s ease-in 7s;
+  animation-fill-mode: forwards;
+}
+
+.toast.error{
+  background-color: rgba(255,0,0,0.4);
+}
+.toast.success{
+  background-color: rgba(0,255,0,0.4);
+}
+.toast-header{
+  background-color: transparent;
+}
+.toast .btn-close{
+  margin: 10px !important;
+}
+
+
+@keyframes hideAnimation {
+to {
+  opacity: 0;
+}
+}
+
+
+
+

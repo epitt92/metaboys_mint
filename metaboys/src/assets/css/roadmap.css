@@ -1,0 +1,117 @@
+#the-roadmap{
+    position: relative;
+}
+#the-roadmap .title h1{
+    font-size: 85px;
+}
+#the-roadmap .title span{
+    position: relative;
+}
+#the-roadmap .title h1 span::before{
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 60%;
+    top: 0;
+    left: -8%;
+    background: radial-gradient(191.99% 200.52% at 8.37% 0%, rgba(28, 27, 27, 0.36) 0%, rgba(255, 255, 255, 0.07) 100%);
+    backdrop-filter: blur(5px);
+}
+.roadmap-item{
+    position: relative;
+    display: flex;
+}
+.roadmap-item > div{
+    margin-bottom: 10%;
+    padding: 5%;
+    background: radial-gradient(191.99% 200.52% at 8.37% 0%, rgba(16, 15, 23, 0.36) 0%, rgba(68, 67, 74, 0.294483) 86.29%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: blur(15px);
+    z-index: 2;
+}
+.roadmap-item h1{
+    margin-top: 0px;
+}
+
+.roadmap-item .c-loading{
+    position: absolute;
+    top: 7%;
+    width: 76px;
+}
+  
+.roadmap-item .index{
+    /* position: absolute; */
+    justify-content: flex-end;
+    display: flex;   
+    min-width: 155px;
+    /* top: calc(50% - 130px); */
+    z-index: 1;
+}
+
+.mleft {
+    flex-direction: row-reverse;
+    padding-left: 115px;
+    text-align: right;
+
+}
+.mleft .c-loading{
+    left: 4%;
+}
+.mright .c-loading{
+    right: 3%;
+}
+.mright {
+    flex-direction: row;
+    text-align: left;
+    padding-right: 115px;
+
+}
+
+.mleft .index {
+    margin-left: -40px;
+    justify-self: flex-end;
+}
+
+.mright .index {
+    margin-right: -40px;
+    justify-self: flex-start;
+}
+.mleft > div{
+    padding-left: 8%;
+}
+.mright > div{
+    padding-right: 8%;
+}
+
+.roadmap-item h1{
+    font-size: 40px;
+}
+
+.roadmap-item p{
+    font-size: 20px;
+}
+
+.loading-1{
+    display: none;
+}
+
+#the-roadmap .b-boy1{
+    position: absolute;
+    right: 0;
+    width: 25%;
+    top: 25%;
+    mix-blend-mode: color-dodge;
+}
+#the-roadmap .b-boy2{
+    position: absolute;
+    left: 0;
+    width: 25%;
+    top: 45%;
+    mix-blend-mode: color-dodge;
+}
+#the-roadmap .b-boy3{
+    position: absolute;
+    right: 0;
+    width: 25%;
+    bottom: 0px;
+    mix-blend-mode: color-dodge;
+}

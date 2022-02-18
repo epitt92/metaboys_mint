@@ -1,0 +1,92 @@
+#the-team{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 8%;
+}
+#the-team .title h1{
+    font-size: 85px;
+}
+#the-team .title span{
+    position: relative;
+}
+#the-team .title h1 span::before{
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 50%;
+    bottom: 0;
+    right: -5%;
+    background: radial-gradient(191.99% 200.52% at 8.37% 0%, rgba(28, 27, 27, 0.36) 0%, rgba(255, 255, 255, 0.07) 100%);
+    backdrop-filter: blur(5px);
+}
+.team-item{
+    position: relative;
+    padding: 1%;
+}
+.team-item .m-card{
+    margin-bottom: 16%;
+    padding: 15px;
+}
+.m-card hr{
+    width: 20%;
+    margin: 20px;
+    margin-left: 40%;
+}
+.m-shadow{
+    background: radial-gradient(191.99% 200.52% at 8.37% 0%, rgba(16, 15, 23, 0.36) 0%, rgba(68, 67, 74, 0.294483) 86.29%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: blur(15px);
+    z-index: 2;
+}
+.team-item img{
+    padding: 20px;
+    margin-bottom: -40%;
+}
+
+.team-item > span{
+  width: 70%;
+  position: absolute;
+  height: 100%;
+  top: -4%;
+  left: 15%;
+  z-index: -2;
+  border: 1.35386px solid #FFFFFF;
+  /* box-sizing: border-box; */
+  border-radius: 50% 50%;
+  /* transform: rotate(-30deg); */
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example1 {
+  0%   {transform: rotate(0deg);}
+  100%  {transform: rotate(-360deg);}
+}
+@keyframes example2 {
+  0%   {transform: rotate(40deg);}
+  100%  {transform: rotate(-320deg);}
+}
+@keyframes example3 {
+  0%   {transform: rotate(80deg);}
+  100%  {transform: rotate(-280deg);}
+}
+@keyframes example4 {
+  0%   {transform: rotate(120deg);}
+  100%  {transform: rotate(-240deg);}
+}
+
+@keyframes example5 {
+  0%   {transform: rotate(160deg);}
+  100%  {transform: rotate(-200deg);}
+}
+@keyframes example6 {
+  0%   {transform: rotate(200deg);}
+  100%  {transform: rotate(-160deg);}
+}
+@keyframes example7 {
+  0%   {transform: rotate(240deg);}
+  100%  {transform: rotate(-120deg);}
+}
+@keyframes example8 {
+  0%   {transform: rotate(280deg);}
+  100%  {transform: rotate(-80deg);}
+}

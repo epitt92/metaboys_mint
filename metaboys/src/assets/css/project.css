@@ -1,0 +1,53 @@
+.project-content{
+    padding: 7%;
+    background: radial-gradient(289.23% 295.55% at 8.37% 0%, rgba(28, 27, 27, 0.22) 0%, rgba(255, 255, 255, 0.25) 99.93%);
+    backdrop-filter: blur(5px);
+    text-align: left;
+}
+#the-projects{
+    position: relative;
+}
+#the-projects .title h1{
+    font-size: 85px;
+}
+#the-projects .title span{
+    position: relative;
+}
+#the-projects .title h1 span::before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    top: -0%;
+    left: -5%;
+    background: radial-gradient(191.99% 200.52% at 8.37% 0%, rgba(28, 27, 27, 0.36) 0%, rgba(255, 255, 255, 0.07) 100%);
+    backdrop-filter: blur(5px);
+}
+#the-projects > .container{
+    display: flex;
+    margin-bottom: 250px;
+}
+.project-back{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    right : -65%;
+    bottom: -20%;
+    overflow: hidden;
+    transition: transform .2s linear;
+}
+.project-back:hover{
+    transform: scale(1.1,1.1);
+}
+
+.marquee-container .overlay{
+    display: none;
+}
+
+.p-mar{
+    background-image: url('../img/marquee.png');
+    background-repeat:  no-repeat;
+    width: 20%;
+    background-size: 100%;
+    height: 47px;
+}
