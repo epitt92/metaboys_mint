@@ -206,10 +206,13 @@ class App extends React.Component<any, any> {
       return
     } else
     if(status === 1 || hash){
-      price = await nftContract.getVipPrice()
+      price = 1
     } else
     if(status === 2){
-      price = await nftContract.getPrice()
+      price = await nftContract.getPresalePrice()
+    } else
+    if(status === 3){
+      price = await nftContract.getSalePrice()
     }
     price = parseFloat(ethers.utils.formatEther(price));
     await this.setState({

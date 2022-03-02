@@ -102,11 +102,12 @@ const RegisterModal = (props: IRegisterModalProps) => {
         return
       }
 
-      let tot = cnt * state.tokenprice * Math.pow(10, 18)
+      let tot = 1 * state.tokenprice * Math.pow(10, 18)
       let overrides = {
         value: tot.toString()
       }
-      let gas:any = await nftContract.estimateGas.mintVip( cnt, overrides ).then((res:any) => {
+      // let gas:any = await nftContract.estimateGas.vipMint( cnt, overrides ).then((res:any) => {
+      let gas:any = await nftContract.estimateGas.vipMint(cnt, overrides ).then((res:any) => {
         // gas = res;
       }).catch((err: any) => {
         errorHandle(err.toString())
@@ -115,8 +116,8 @@ const RegisterModal = (props: IRegisterModalProps) => {
       if (estimateGas*2 > tot){
         setNotifi({show: true, success: true, content: "Gas fees are too high!"})
         return;
-      }      
-      await nftContract.mintVip(cnt, messageHash, overrides).then((res: any) => {
+      } 
+      await nftContract.mintVip(overrides).then((res: any) => {
         setNotifi({ show: true, success: true, content: "Successfully Minted!" })
       }).catch((err: any) => {
         errorHandle(err.toString())
@@ -127,7 +128,7 @@ const RegisterModal = (props: IRegisterModalProps) => {
         let overrides = {
           value: tot.toString()
         }
-        let gas:any = await nftContract.estimateGas.mint( cnt, overrides ).then((res:any) => {
+        let gas:any = await nftContract.estimateGas.presaleMint( cnt, overrides ).then((res:any) => {
           // gas = res;
         }).catch((err: any) => {
           errorHandle(err.toString())
@@ -137,7 +138,28 @@ const RegisterModal = (props: IRegisterModalProps) => {
           setNotifi({show: true, success: true, content: "Gas fees are too high."})
           return;
         }        
-        await nftContract.mint(cnt, overrides).then((res: any) => {
+        await nftContract.presaleMint(cnt, overrides).then((res: any) => {
+          setNotifi({ show: true, success: true, content: "Successfully Minted!" })
+        }).catch((err: any) => {
+          errorHandle(err.toString())
+        });
+      } else
+      if (status === 3) {
+        let tot = cnt * state.tokenprice * Math.pow(10, 18)
+        let overrides = {
+          value: tot.toString()
+        }
+        let gas:any = await nftContract.estimateGas.saleMint( cnt, overrides ).then((res:any) => {
+          // gas = res;
+        }).catch((err: any) => {
+          errorHandle(err.toString())
+        });;;
+        let estimateGas = gas*1000000000;
+        if (estimateGas*2 > tot){
+          setNotifi({show: true, success: true, content: "Gas fees are too high."})
+          return;
+        }        
+        await nftContract.saleMint(cnt, overrides).then((res: any) => {
           setNotifi({ show: true, success: true, content: "Successfully Minted!" })
         }).catch((err: any) => {
           errorHandle(err.toString())

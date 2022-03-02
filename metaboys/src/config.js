@@ -1,7 +1,7 @@
 export let config = {
     development: "on",
-    countDownDate: new Date("Feb 16, 2022 21:00:00 UTC+1").getTime(),
-    contract: "0x7b6412a16d6f4761942E9B190A8084FEDef7E136",
+    countDownDate: new Date("Mar 5, 2022 21:00:00 UTC+1").getTime(),
+    contract: "0x1Fcf5127D052249DC7d50809909403FDCc21E941",
     abi: [
         {
             "inputs": [],
@@ -90,68 +90,6 @@ export let config = {
             "type": "event"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_tokenId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "burn",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "gift",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "mint",
-            "outputs": [],
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "bytes32",
-                    "name": "messageHash",
-                    "type": "bytes32"
-                }
-            ],
-            "name": "mintVip",
-            "outputs": [],
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
             "anonymous": false,
             "inputs": [
                 {
@@ -171,16 +109,29 @@ export let config = {
             "type": "event"
         },
         {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "ammount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "presaleMint",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_price",
+                    "name": "_presalePrice",
                     "type": "uint256"
                 }
             ],
-            "name": "PriceChanged",
+            "name": "PresalePriceChanged",
             "type": "event"
         },
         {
@@ -244,6 +195,32 @@ export let config = {
         {
             "inputs": [
                 {
+                    "internalType": "uint256",
+                    "name": "ammount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "saleMint",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_salePrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SalePriceChanged",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
                     "internalType": "address",
                     "name": "operator",
                     "type": "address"
@@ -285,20 +262,7 @@ export let config = {
                     "type": "uint256"
                 }
             ],
-            "name": "setPrice",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "enum Meta3oys.TokenStatus",
-                    "name": "newStatus",
-                    "type": "uint8"
-                }
-            ],
-            "name": "setTokenStatus",
+            "name": "setPresalePrice",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -311,7 +275,20 @@ export let config = {
                     "type": "uint256"
                 }
             ],
-            "name": "setVipPrice",
+            "name": "setSalePrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "enum MyNFT.TokenStatus",
+                    "name": "newStatus",
+                    "type": "uint8"
+                }
+            ],
+            "name": "setTokenStatus",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -321,7 +298,7 @@ export let config = {
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "enum Meta3oys.TokenStatus",
+                    "internalType": "enum MyNFT.TokenStatus",
                     "name": "_tokenStatus",
                     "type": "uint8"
                 }
@@ -391,17 +368,11 @@ export let config = {
             "type": "function"
         },
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_vipPrice",
-                    "type": "uint256"
-                }
-            ],
-            "name": "VipPriceChanged",
-            "type": "event"
+            "inputs": [],
+            "name": "vipMint",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
             "inputs": [],
@@ -463,7 +434,20 @@ export let config = {
         },
         {
             "inputs": [],
-            "name": "getPrice",
+            "name": "getPresalePrice",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getSalePrice",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -489,20 +473,7 @@ export let config = {
         },
         {
             "inputs": [],
-            "name": "getVipPrice",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "GIFT_SUPPLY",
+            "name": "GIFTSUPPLY",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -539,33 +510,7 @@ export let config = {
         },
         {
             "inputs": [],
-            "name": "MAX_SUPPLY",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "MINT_AT_ONCE",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "MINT_PER_WALLET",
+            "name": "MAXSUPPLY",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -656,6 +601,49 @@ export let config = {
         {
             "inputs": [
                 {
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                }
+            ],
+            "name": "tokenByIndex",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                }
+            ],
+            "name": "tokenOfOwnerByIndex",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
                     "internalType": "address",
                     "name": "",
                     "type": "address"
@@ -677,7 +665,7 @@ export let config = {
             "name": "tokenStatus",
             "outputs": [
                 {
-                    "internalType": "enum Meta3oys.TokenStatus",
+                    "internalType": "enum MyNFT.TokenStatus",
                     "name": "",
                     "type": "uint8"
                 }
