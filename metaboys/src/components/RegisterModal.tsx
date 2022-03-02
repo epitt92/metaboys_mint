@@ -95,7 +95,8 @@ const RegisterModal = (props: IRegisterModalProps) => {
     let messageHash = whitelist[state.address.toUpperCase()];
     console.log("messageHash:" + messageHash)
 
-    if (status === 1 || messageHash) {
+    // if (status === 1 || messageHash) {
+    if (status === 1) {
       if (!messageHash) {
         setNotifi({ show: true, success: true, content: "Your wallet address is not on the whitelist!" })
         //killSession()

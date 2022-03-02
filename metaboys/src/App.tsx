@@ -200,17 +200,20 @@ class App extends React.Component<any, any> {
     //console.log("hash: "+hash);
     
     let status =  await nftContract.tokenStatus();
-    if(status === 0){
+    console.log("sta: ", typeof status)
+    if(status == 0){
       this.setNotification({show: true, success: true, content: "Contract paused!"})
       this.resetApp()
       return
     } else
-    if(status === 1 || hash){
+    // if(status === 1 || hash){
+    if(status === 1 ){
       price = 1
     } else
     if(status === 2){
       price = await nftContract.getPresalePrice()
-    } else
+    console.log("sta pr: ", price)
+  } else
     if(status === 3){
       price = await nftContract.getSalePrice()
     }

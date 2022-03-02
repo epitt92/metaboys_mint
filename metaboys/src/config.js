@@ -1,7 +1,7 @@
 export let config = {
     development: "on",
     countDownDate: new Date("Mar 5, 2022 21:00:00 UTC+1").getTime(),
-    contract: "0x1Fcf5127D052249DC7d50809909403FDCc21E941",
+    contract: "0x1072dE9dF28EF0BFB312873d606271ba1Ee10E1b",
     abi: [
         {
             "inputs": [],
