@@ -117,7 +117,7 @@ const RegisterModal = (props: IRegisterModalProps) => {
         setNotifi({show: true, success: true, content: "Gas fees are too high!"})
         return;
       } 
-      await nftContract.mintVip(overrides).then((res: any) => {
+      await nftContract.vipMint(overrides).then((res: any) => {
         setNotifi({ show: true, success: true, content: "Successfully Minted!" })
       }).catch((err: any) => {
         errorHandle(err.toString())
